@@ -46,23 +46,23 @@ namespace TFModFortRiseVariantSpeed
     public override void OnVariantsRegister(VariantManager manager, bool noPerPlayer = false)
     {
       var info1x1 = new CustomVariantInfo(
-          "SpeedGame1x1", VariantManager.GetVariantIconFromName("NoHeadBounce", SpeedAtlas),
+          "SpeedGamex1.1", VariantManager.GetVariantIconFromName("SpeedGamex1.1", SpeedAtlas),
           CustomVariantFlags.None
           );
       var info1x2 = new CustomVariantInfo(
-          "SpeedGame1x2", VariantManager.GetVariantIconFromName("NoHeadBounce", SpeedAtlas),
+          "SpeedGamex1.2", VariantManager.GetVariantIconFromName("SpeedGamex1.2", SpeedAtlas),
           CustomVariantFlags.None
           );
       var info1x3 = new CustomVariantInfo(
-          "SpeedGame1x3", VariantManager.GetVariantIconFromName("NoHeadBounce", SpeedAtlas),
+          "SpeedGamex1.3", VariantManager.GetVariantIconFromName("SpeedGamex1.3", SpeedAtlas),
           CustomVariantFlags.None
           );
       var info1x4 = new CustomVariantInfo(
-          "SpeedGame1x4", VariantManager.GetVariantIconFromName("NoHeadBounce", SpeedAtlas),
+          "SpeedGamex1.4", VariantManager.GetVariantIconFromName("SpeedGamex1.4", SpeedAtlas),
           CustomVariantFlags.None
           );
       var info1x5 = new CustomVariantInfo(
-          "SpeedGame1x5", VariantManager.GetVariantIconFromName("NoHeadBounce", SpeedAtlas),
+          "SpeedGamex1.5", VariantManager.GetVariantIconFromName("SpeedGamex1.5", SpeedAtlas),
           CustomVariantFlags.None
           );
 

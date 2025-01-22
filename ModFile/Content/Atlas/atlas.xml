@@ -1,3 +1,7 @@
 <TextureAtlas imagePath="../atlas/png">
-  <SubTexture name="variants/noHeadBounce" x="0" y="180" width="14" height="14"/>
+  <SubTexture name="variants/speedGamex1.1" x="0" y="0" width="14" height="14"/>
+  <SubTexture name="variants/speedGamex1.2" x="15" y="0" width="14" height="14"/>
+  <SubTexture name="variants/speedGamex1.3" x="30" y="0" width="14" height="14"/>
+  <SubTexture name="variants/speedGamex1.4" x="45" y="0" width="14" height="14"/>
+  <SubTexture name="variants/speedGamex1.5" x="60" y="0" width="14" height="14"/>
 </TextureAtlas>
