@@ -18,19 +18,15 @@ namespace TFModFortRiseVariantSpeed
     public static TFModFortRiseVariantSpeedModule Instance;
     public static Atlas SpeedAtlas;
 
-    public override Type SettingsType => typeof(TFModFortRiseVariantSpeedSettings);
-    public TFModFortRiseVariantSpeedSettings Settings => (TFModFortRiseVariantSpeedSettings)Instance.InternalSettings;
-
     public TFModFortRiseVariantSpeedModule()
     {
       Instance = this;
-      Logger.Init("VariantSpeedLOG");
+      //Logger.Init("VariantSpeedLOG");
     }
 
     public override void LoadContent()
     {
       SpeedAtlas = Content.LoadAtlas("Atlas/atlas.xml", "Atlas/atlas.png");
-
     }
 
     public override void Load()
