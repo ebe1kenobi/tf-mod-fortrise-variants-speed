@@ -1,14 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using System.Xml;
-using FortRise;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
+﻿using FortRise;
 using Monocle;
-using MonoMod.ModInterop;
-using MonoMod.Utils;
-using TowerFall;
 
 namespace TFModFortRiseVariantSpeed
 {
