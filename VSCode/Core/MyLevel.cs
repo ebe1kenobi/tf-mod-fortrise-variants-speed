@@ -1,39 +1,40 @@
-﻿using Monocle;
-using FortRise;
+﻿using FortRise;
+using HarmonyLib;
+using Monocle;
+using TowerFall;
 
 namespace TFModFortRiseVariantSpeed
 {
-  public class MyLevel {
+  public class MyLevel : IHookable
+  {
 
-    internal static void Load()
+    public static void Load(IHarmony harmony)
     {
-      On.TowerFall.Level.Update += Update_patch;
+      harmony.Patch(
+          AccessTools.DeclaredMethod(typeof(Level), nameof(Level.Update)),
+          postfix: new HarmonyMethod(Update_patch)
+      );
     }
 
-    internal static void Unload()
-    {
-      On.TowerFall.Level.Update -= Update_patch;
-    }
-    public static void Update_patch(On.TowerFall.Level.orig_Update orig, global::TowerFall.Level self) {
+    public static void Update_patch(Level __instance) {
 
-      orig(self);
-      if (VariantManager.GetCustomVariant("SpeedGamex1.1"))
+      if (Variants.Speedx1.IsActive())
       {
         Engine.TimeRate = 1.1f;
       }
-      else if (VariantManager.GetCustomVariant("SpeedGamex1.2"))
+      else if (Variants.Speedx2.IsActive())
       {
         Engine.TimeRate = 1.2f;
       }
-      else if (VariantManager.GetCustomVariant("SpeedGamex1.3"))
+      else if (Variants.Speedx3.IsActive())
       {
         Engine.TimeRate = 1.3f;
       }
-      else if (VariantManager.GetCustomVariant("SpeedGamex1.4"))
+      else if (Variants.Speedx4.IsActive())
       {
         Engine.TimeRate = 1.4f;
       }
-      else if (VariantManager.GetCustomVariant("SpeedGamex1.5"))
+      else if (Variants.Speedx5.IsActive())
       {
         Engine.TimeRate = 1.5f;
       }

@@ -1,7 +1,13 @@
 {
-	"name": "Variant Speed",
-	"version": "0.0.1",
+	"name": "VariantSpeed",
+	"version": "1.0.1",
 	"author": "ebe1.kenobi",
 	"description": "Add new variant to increase the game speed from x1.1 to 1.5 the normal game speed",
-	"dll": "TFModFortRiseVariantSpeed.dll"
+	"dll": "TFModFortRiseVariantSpeed.dll",
+	"dependencies": [
+		{
+			"name": "FortRise",
+			"version": "5.0.0"
+		}
+	]
 }
