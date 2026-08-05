@@ -1,4 +1,4 @@
-﻿using FortRise;
+using FortRise;
 
 namespace TFModFortRiseVariantSpeed
 {
@@ -14,12 +14,18 @@ namespace TFModFortRiseVariantSpeed
     {
       Speedx1 = registry.Variants.RegisterVariant("Speedx1", new()
       {
+        // Header commun a tous mes mods : sans lui FortRise retombe sur le nom du
+        // mod et chacun cree sa propre colonne dans l'ecran des variantes.
+        Header = "EBE1 MODS",
         Title = "Speedx1",
         Flags = CustomVariantFlags.None,
         Icon = TextureRegistry.Speedx1
       });
       Speedx2 = registry.Variants.RegisterVariant("Speedx2", new()
       {
+        // Header commun a tous mes mods : sans lui FortRise retombe sur le nom du
+        // mod et chacun cree sa propre colonne dans l'ecran des variantes.
+        Header = "EBE1 MODS",
         Title = "Speedx2",
         Flags = CustomVariantFlags.None,
         Icon = TextureRegistry.Speedx2
@@ -27,6 +33,9 @@ namespace TFModFortRiseVariantSpeed
 
       Speedx3 = registry.Variants.RegisterVariant("Speedx3", new()
       {
+        // Header commun a tous mes mods : sans lui FortRise retombe sur le nom du
+        // mod et chacun cree sa propre colonne dans l'ecran des variantes.
+        Header = "EBE1 MODS",
         Title = "Speedx3",
         Flags = CustomVariantFlags.None,
         Icon = TextureRegistry.Speedx3
@@ -34,6 +43,9 @@ namespace TFModFortRiseVariantSpeed
 
       Speedx4 = registry.Variants.RegisterVariant("Speedx4", new()
       {
+        // Header commun a tous mes mods : sans lui FortRise retombe sur le nom du
+        // mod et chacun cree sa propre colonne dans l'ecran des variantes.
+        Header = "EBE1 MODS",
         Title = "Speedx4",
         Flags = CustomVariantFlags.None,
         Icon = TextureRegistry.Speedx4
@@ -41,6 +53,9 @@ namespace TFModFortRiseVariantSpeed
 
       Speedx5 = registry.Variants.RegisterVariant("Speedx5", new()
       {
+        // Header commun a tous mes mods : sans lui FortRise retombe sur le nom du
+        // mod et chacun cree sa propre colonne dans l'ecran des variantes.
+        Header = "EBE1 MODS",
         Title = "Speedx5",
         Flags = CustomVariantFlags.None,
         Icon = TextureRegistry.Speedx5
