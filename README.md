@@ -1,24 +1,33 @@
-port to fortrise of the mod https://github.com/ebe1kenobi/tf-mod-variant-speed
+# VariantSpeed
 
-# Variant speed mod
+Five variants that change the **game speed**, from `Speedx1` (slowest) to
+`Speedx5` (fastest). They are ticked like any other variant and have no settings.
 
-![image](https://github.com/user-attachments/assets/a87beafb-e933-4c8c-afe8-3d5d0d1ddb5c)
+A mod for **FortRise 5** (>= 5.3.3). The FortRise 4 version (`tf-mod-fortrise-variants-speed`) is no longer maintained: fixes and new features only land in this repository.
 
-You can speed up the game from X 1.1 to x1.5 
+## Installation
 
-You need to add the variant in the match settings page
+1. Install FortRise 5 and start the game through `FortRise.exe`.
+2. Copy `release/variantspeed` (or the shipped folder) into `<TowerFall>/FortRise/Mods/`.
 
-# Acknowledgements
+Settings are under **Options > Mods > VariantSpeed**.
+Data and log files live in `<TowerFall>/FortRise/Saves/VariantSpeed/` and `<TowerFall>/FortRise/Logs/`.
 
-- [Extremely OK Games](https://exok.com), for making this awesome, lovely game.
+## Usage
 
-- The developer of [Bartizan](https://github.com/Kha/Bartizan#installation), from where I borrowed the basic code for patching.
-- The developer [vcanaa](https://github.com/vcanaa) of [towerfall_ai]([https://github.com/vcanaa](https://github.com/TowerfallAi/towerfall-ai))
-- The developer [Jonesey13](https://github.com/Jonesey13) : [https://github.com/TowerfallAi/towerfall-ai](https://github.com/Jonesey13/TF-8-Player)
+Tick **one** of the `Speedx1` to `Speedx5` variants on the versus variants screen.
+They override each other, so ticking several makes no sense.
 
-- Matt Thorson and everybody else who contributed to making such an awesome game!
-- Everybody who worked on the Bartizan project which allowed the mod to be open-sourceable
-- All those who worked on Mono.Cecil
-- Alec Gibson for suggesting that someone should make this mod in the first place
-- Everybody at Softwire and RCVGS who tested the earlier versions of the mod
+> All my mods declare the same `Header` (`EBE1 MODS`), so their variants are
+> grouped into a **single column** of the variants screen instead of one column
+> per mod.
 
+## Build / deployment
+
+| Script | Purpose |
+|--------|---------|
+| `script/release.bat` | build, then assemble into `release/` |
+| `script/deploy.bat` | copy `release/` into the TowerFall `Mods` folder |
+| `script/release_deploy.bat` | both, one after the other |
+
+Paths (game folder, module name) are set in `script/config.bat`.
