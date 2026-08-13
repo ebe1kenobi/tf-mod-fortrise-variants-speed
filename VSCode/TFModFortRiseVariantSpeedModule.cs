@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using FortRise;
 using Microsoft.Extensions.Logging;
@@ -17,7 +17,8 @@ namespace TFModFortRiseVariantSpeed
 
      ];
     internal Type[] Hookables = [
-        typeof(MyLevel),
+        typeof(MyPlayer),
+        typeof(MyVariantToggle),
     ];
     //public static Atlas SpeedAtlas;
 
@@ -28,7 +29,7 @@ namespace TFModFortRiseVariantSpeed
         //Debugger.Launch(); // Proposera d’attacher Visual Studio
       }
       Instance = this;
-      //Logger.Init("VariantSpeedLOG");
+      TFModFortRiseVariantSpeed.Logger.Init(logger);
 
       foreach (var hookable in Hookables)
       {
@@ -41,49 +42,39 @@ namespace TFModFortRiseVariantSpeed
       }
     }
 
-    //public override void LoadContent()
-    //{
-    //  SpeedAtlas = Content.LoadAtlas("Atlas/atlas.xml", "Atlas/atlas.png");
-    //}
+    public static TFModFortRiseVariantSpeedSettings Settings
+        => Instance.GetSettings<TFModFortRiseVariantSpeedSettings>()!;
 
-    //public override void Load()
-    //{
-    //  MyLevel.Load();
-    //}
+    public override ModuleSettings CreateSettings()
+    {
+      return new TFModFortRiseVariantSpeedSettings();
+    }
 
-    //public override void Unload()
-    //{
-    //  MyLevel.Unload();
-    //}
+    /// <summary>
+    /// Ecrit les reglages sur le disque tout de suite.
+    ///
+    /// FortRise ne les enregistre qu'en quittant SES options (MainMenu.DestroyOptions)
+    /// ou lors d'une sauvegarde de partie. Une vitesse changee depuis la fenetre de
+    /// l'ecran des variantes resterait donc en memoire et serait perdue en quittant
+    /// le jeu. SaveSettings est internal cote FortRise, d'ou la reflexion.
+    /// </summary>
+    public static void SaveSettingsNow()
+    {
+      if (Instance == null)
+      {
+        return;
+      }
 
-    //public override void OnVariantsRegister(VariantManager manager, bool noPerPlayer = false)
-    //{
-    //  var info1x1 = new CustomVariantInfo(
-    //      "SpeedGamex1.1", VariantManager.GetVariantIconFromName("SpeedGamex1.1", SpeedAtlas),
-    //      CustomVariantFlags.None
-    //      );
-    //  var info1x2 = new CustomVariantInfo(
-    //      "SpeedGamex1.2", VariantManager.GetVariantIconFromName("SpeedGamex1.2", SpeedAtlas),
-    //      CustomVariantFlags.None
-    //      );
-    //  var info1x3 = new CustomVariantInfo(
-    //      "SpeedGamex1.3", VariantManager.GetVariantIconFromName("SpeedGamex1.3", SpeedAtlas),
-    //      CustomVariantFlags.None
-    //      );
-    //  var info1x4 = new CustomVariantInfo(
-    //      "SpeedGamex1.4", VariantManager.GetVariantIconFromName("SpeedGamex1.4", SpeedAtlas),
-    //      CustomVariantFlags.None
-    //      );
-    //  var info1x5 = new CustomVariantInfo(
-    //      "SpeedGamex1.5", VariantManager.GetVariantIconFromName("SpeedGamex1.5", SpeedAtlas),
-    //      CustomVariantFlags.None
-    //      );
-
-    //  manager.AddVariant(info1x1);
-    //  manager.AddVariant(info1x2);
-    //  manager.AddVariant(info1x3);
-    //  manager.AddVariant(info1x4);
-    //  manager.AddVariant(info1x5);
-    //}
+      try
+      {
+        var method = typeof(Mod).GetMethod("SaveSettings",
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        method?.Invoke(Instance, null);
+      }
+      catch (Exception ex)
+      {
+        TFModFortRiseVariantSpeed.Logger.Info($"[Settings] sauvegarde immediate impossible : {ex.Message}");
+      }
+    }
   }
 }

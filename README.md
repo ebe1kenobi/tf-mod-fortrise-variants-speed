@@ -1,7 +1,8 @@
 # VariantSpeed
 
-Five variants that change the **game speed**, from `Speedx1` (slowest) to
-`Speedx5` (fastest). They are ticked like any other variant and have no settings.
+One **per-player** variant, `SPEED`: the archers that carry it run faster, exactly
+the way TowerFall's speed boots make you run faster. How much faster is set in a
+window that opens on the variant itself.
 
 A mod for **FortRise 5** (>= 5.3.3). The FortRise 4 version (`tf-mod-fortrise-variants-speed`) is no longer maintained: fixes and new features only land in this repository.
 
@@ -15,8 +16,38 @@ Data and log files live in `<TowerFall>/FortRise/Saves/VariantSpeed/` and `<Towe
 
 ## Usage
 
-Tick **one** of the `Speedx1` to `Speedx5` variants on the versus variants screen.
-They override each other, so ticking several makes no sense.
+Tick `SPEED` on the variants screen, then:
+
+| Key | |
+|---|---|
+| **Alt** | the game's own per-player window - who runs faster |
+| **Alt2** | the speed window - *how much* faster |
+
+In the speed window, left and right move the multiplier by 5 %, between `x1.05` and
+`x2.50`; confirm or back closes it. The value is shared by every archer carrying the
+variant, and it is remembered between sessions (it is also editable under
+**Options > Mods > VariantSpeed**).
+
+### It speeds up the archer, not the game
+
+The variant used to set `Engine.TimeRate`, which sped up *everything* - arrows,
+enemies, platforms, animations, even the music. That does not make an archer fast,
+it makes the match short, and it breaks anything counted in frames: round timers,
+recordings, other mods' variants.
+
+TowerFall has exactly one line for its speed boots, inside `Player.MaxRunSpeed`:
+`if (HasSpeedBoots) num *= 1.4f;`. This mod does the same thing with an adjustable
+factor, and nothing else moves - not the jump, not the dodge, not the inertia. The
+default is `x1.40`, the boots' own value. It stacks with real boots picked up
+in-game, as two speed bonuses should.
+
+### Why one variant instead of five
+
+`Speedx1` to `Speedx5` filled five cells of the variants screen to say the same
+thing at five fixed speeds. One cell says it better, and the window covers every
+speed in between. The window itself is modelled on the game's per-player window -
+same panel, same slide-in, same sounds - so it reads as part of the screen rather
+than a menu bolted onto it.
 
 > All my mods declare the same `Header` (`EBE1 MODS`), so their variants are
 > grouped into a **single column** of the variants screen instead of one column
