@@ -1,13 +1,13 @@
 {
-	"name": "VariantSpeed",
-	"version": "2.0.0",
-	"author": "ebe1.kenobi",
-	"description": "A per-player SPEED variant: runs faster like the speed boots, with an adjustable multiplier",
-	"dll": "TFModFortRiseVariantSpeed.dll",
-	"dependencies": [
-		{
-			"name": "FortRise",
-			"version": "5.3.3"
-		}
-	]
+  "name": "VariantSpeed",
+  "version": "1.1.0",
+  "author": "ebe1.kenobi",
+  "description": "A per-player SPEED variant: runs faster like the speed boots, with an adjustable multiplier",
+  "dll": "TFModFortRiseVariantSpeed.dll",
+  "dependencies": [
+    {
+      "name": "FortRise",
+      "version": "5.3.3"
+    }
+  ]
 }
