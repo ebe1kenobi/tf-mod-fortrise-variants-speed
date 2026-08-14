@@ -1,5 +1,5 @@
 # VariantSpeed
-<img width="640" height="480" alt="headhunters_231254_round_00" src="https://github.com/user-attachments/assets/3cfa17f3-2555-4cc3-8733-88d0a99032a7" />
+<img width="640" height="400" alt="headhunters_231254_round_00" src="https://github.com/user-attachments/assets/3cfa17f3-2555-4cc3-8733-88d0a99032a7" />
 
 
 One **per-player** variant, `SPEED`: the archers that carry it run faster, exactly
