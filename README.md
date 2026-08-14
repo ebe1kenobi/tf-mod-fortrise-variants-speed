@@ -16,6 +16,13 @@ Data and log files live in `<TowerFall>/FortRise/Saves/VariantSpeed/` and `<Towe
 
 ## Usage
 
+<img width="667" height="239" alt="image" src="https://github.com/user-attachments/assets/b7aabb5c-7a9c-4025-8e35-da5d520b1b2c" />
+
+<img width="627" height="211" alt="image" src="https://github.com/user-attachments/assets/2852af98-df77-4296-a0d4-cb83925a359a" />
+
+<img width="886" height="219" alt="image" src="https://github.com/user-attachments/assets/c64ec12c-2ca7-45bc-925d-c9ca1820b6fd" />
+
+
 Tick `SPEED` on the variants screen, then:
 
 | Key | |
